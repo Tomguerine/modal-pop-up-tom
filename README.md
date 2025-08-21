@@ -1,4 +1,4 @@
-# modal-popup
+# modal-pop-up-tom
 
 ## Prérequis
 
@@ -12,7 +12,7 @@
 ## Installation
 
 ```bash
-npm install modal-popup
+npm install modal-pop-up-tom
 # installer les peerDependencies
 npm install react react-dom @radix-ui/react-dialog
 ```
@@ -20,7 +20,7 @@ npm install react react-dom @radix-ui/react-dialog
 ## Utilisation
 
 ```tsx
-import Modal from 'modal-popup'
+import Modal from 'modal-pop-up-tom'
 
 function App() {
   return (
@@ -42,5 +42,5 @@ function App() {
 
 ## Page du paquet
 
-[https://www.npmjs.com/package/modal-popup](https://www.npmjs.com/package/modal-popup)
+[https://www.npmjs.com/package/modal-pop-up-tom](https://www.npmjs.com/package/modal-pop-up-tom)
 
