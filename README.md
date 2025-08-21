@@ -5,16 +5,20 @@
 - Node.js ≥ 18
 - Éditeur recommandé : [Visual Studio Code](https://code.visualstudio.com/)
 - Dépendances :
-  - react ^18.0.0
-  - react-dom ^18.0.0
+  - react ^19.1.1
+  - react-dom ^19.1.1
   - @radix-ui/react-dialog ^1.0.0
+  - react-datepicker
+  - react-redux
+  - react-router-dom
+  - redux-persist
 
 ## Installation
 
 ```bash
 npm install modal-popup
 # installer les peerDependencies
-npm install react react-dom @radix-ui/react-dialog
+npm install react@^19.1.1 react-dom@^19.1.1 @radix-ui/react-dialog react-datepicker react-redux react-router-dom redux-persist
 ```
 
 ## Utilisation
