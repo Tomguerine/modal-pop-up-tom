@@ -34,12 +34,18 @@ function Modal({
   firstName,
   lastName,
 }: ModalProps) {
-  if (!open || !firstName || !lastName) return null
+  const [internalOpen, setInternalOpen] = useState(false)
+  const isControlled = open !== undefined
+  const currentOpen = isControlled ? open : internalOpen
+  if (!firstName || !lastName) return null
   const [live, setLive] = useState('')
   return (
     <Dialog.Root
-      open={open}
+      open={currentOpen}
       onOpenChange={(o: boolean) => {
+        if (!isControlled) {
+          setInternalOpen(o)
+        }
         onOpenChange?.(o)
         setLive(o ? 'Dialog opened' : 'Dialog closed')
       }}
