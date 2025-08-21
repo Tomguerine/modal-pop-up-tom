@@ -13,7 +13,8 @@
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc && cp dist/index.js dist/index.esm.js",
+    "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
     "react": "^18.0.0",
@@ -24,5 +25,9 @@
     "typescript": "^5.4.0",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0"
-  }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ]
 }
