@@ -4,11 +4,9 @@
     "declaration": true,
     "jsx": "react-jsx",
     "module": "ESNext",
-    "moduleResolution": "node",
     "target": "ES2020",
     "strict": true,
-    "esModuleInterop": true,
-    "types": ["react"]
+    "esModuleInterop": true
   },
   "include": [
     "src"
