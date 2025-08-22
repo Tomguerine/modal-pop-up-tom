@@ -83,9 +83,9 @@ function ModalPop({
               {title}
             </Dialog.Title>
           )}
-          <div style={{ marginBottom: 8 }}>
+          {/* <div style={{ marginBottom: 8 }}>
             {firstName} {lastName}
-          </div>
+          </div> */}
           <div>{children}</div>
           <Dialog.Close asChild>
             <button
