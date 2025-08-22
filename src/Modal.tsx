@@ -8,8 +8,8 @@ import * as Dialog from '@radix-ui/react-dialog'
  * @property children - Modal content
  * @property open - Controlled open state
  * @property onOpenChange - Callback invoked when the open state changes
- * @property firstName - First name displayed in the dialog content
- * @property lastName - Last name displayed in the dialog content
+ * @property firstName - Optional first name displayed in the dialog content
+ * @property lastName - Optional last name displayed in the dialog content
  */
 type ModalProps = {
   trigger?: ReactNode
@@ -37,7 +37,6 @@ function Modal({
   const [internalOpen, setInternalOpen] = useState(false)
   const isControlled = open !== undefined
   const currentOpen = isControlled ? open : internalOpen
-  if (!firstName || !lastName) return null
   const [live, setLive] = useState('')
   return (
     <Dialog.Root
@@ -64,9 +63,11 @@ function Modal({
               {title}
             </Dialog.Title>
           )}
-          <div>
-            {firstName} {lastName}
-          </div>
+          {(firstName || lastName) && (
+            <div>
+              {[firstName, lastName].filter(Boolean).join(' ')}
+            </div>
+          )}
           <div>{children}</div>
           <Dialog.Close asChild>
             <button className="mt-4" aria-label="Close">
