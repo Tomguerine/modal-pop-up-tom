@@ -38,7 +38,14 @@ function ModalPop({
   const [live, setLive] = useState('')
   const isControlled = open !== undefined
   const currentOpen = isControlled ? open : internalOpen
-  if (!firstName || !lastName) return null
+  if (!firstName || !lastName) {
+    return (
+      <div>
+        {trigger}
+        <p role="alert">First and last name are required.</p>
+      </div>
+    )
+  }
   return (
     <Dialog.Root
       open={currentOpen}
