@@ -45,8 +45,9 @@ function ModalPop({ trigger, title, children, open, onOpenChange, firstName, las
     const [live, setLive] = (0, react_1.useState)('');
     const isControlled = open !== undefined;
     const currentOpen = isControlled ? open : internalOpen;
-    if (!firstName || !lastName)
-        return null;
+    if (!firstName || !lastName) {
+        return ((0, jsx_runtime_1.jsxs)("div", { children: [trigger, (0, jsx_runtime_1.jsx)("p", { role: "alert", children: "First and last name are required." })] }));
+    }
     return ((0, jsx_runtime_1.jsxs)(Dialog.Root, { open: currentOpen, onOpenChange: (o) => {
             if (!isControlled) {
                 setInternalOpen(o);

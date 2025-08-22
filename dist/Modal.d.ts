@@ -21,6 +21,6 @@ type ModalProps = {
 /**
  * Simple modal dialog built with Radix UI's Dialog primitives.
  */
-declare function ModalPop({ trigger, title, children, open, onOpenChange, firstName, lastName, }: ModalProps): import("react/jsx-runtime").JSX.Element | null;
+declare function ModalPop({ trigger, title, children, open, onOpenChange, firstName, lastName, }: ModalProps): import("react/jsx-runtime").JSX.Element;
 export { ModalPop };
 export default ModalPop;
