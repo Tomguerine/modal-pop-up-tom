@@ -33,14 +33,14 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Modal = Modal;
+exports.ModalPop = ModalPop;
 const jsx_runtime_1 = require("react/jsx-runtime");
 const react_1 = require("react");
 const Dialog = __importStar(require("@radix-ui/react-dialog"));
 /**
  * Simple modal dialog built with Radix UI's Dialog primitives.
  */
-function Modal({ trigger, title, children, open, onOpenChange, firstName, lastName, }) {
+function ModalPop({ trigger, title, children, open, onOpenChange, firstName, lastName, }) {
     const [internalOpen, setInternalOpen] = (0, react_1.useState)(false);
     const isControlled = open !== undefined;
     const currentOpen = isControlled ? open : internalOpen;
@@ -55,4 +55,4 @@ function Modal({ trigger, title, children, open, onOpenChange, firstName, lastNa
             setLive(o ? 'Dialog opened' : 'Dialog closed');
         }, children: [trigger && (0, jsx_runtime_1.jsx)(Dialog.Trigger, { asChild: true, children: trigger }), (0, jsx_runtime_1.jsxs)(Dialog.Portal, { children: [(0, jsx_runtime_1.jsx)(Dialog.Overlay, { className: "fixed inset-0 bg-black/50" }), (0, jsx_runtime_1.jsxs)(Dialog.Content, { role: "alertdialog", "aria-modal": "true", "aria-labelledby": "modal-title", className: "fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-4 shadow-lg", children: [title && ((0, jsx_runtime_1.jsx)(Dialog.Title, { id: "modal-title", className: "mb-2 font-bold", children: title })), (0, jsx_runtime_1.jsxs)("div", { children: [firstName, " ", lastName] }), (0, jsx_runtime_1.jsx)("div", { children: children }), (0, jsx_runtime_1.jsx)(Dialog.Close, { asChild: true, children: (0, jsx_runtime_1.jsx)("button", { className: "mt-4", "aria-label": "Close", children: "Close" }) })] })] }), (0, jsx_runtime_1.jsx)("div", { "aria-live": "assertive", className: "sr-only", children: live })] }));
 }
-exports.default = Modal;
+exports.default = ModalPop;

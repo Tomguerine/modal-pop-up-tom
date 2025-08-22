@@ -25,7 +25,7 @@ type ModalProps = {
 /**
  * Simple modal dialog built with Radix UI's Dialog primitives.
  */
-function Modal({
+function ModalPop({
   trigger,
   title,
   children,
@@ -82,5 +82,5 @@ function Modal({
   )
 }
 
-export { Modal }
-export default Modal
+export { ModalPop }
+export default ModalPop
