@@ -35,11 +35,28 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ModalPop = ModalPop;
 const jsx_runtime_1 = require("react/jsx-runtime");
+// src/Modal.tsx (dans TON MODULE NPM)
 const react_1 = require("react");
 const Dialog = __importStar(require("@radix-ui/react-dialog"));
-/**
- * Simple modal dialog built with Radix UI's Dialog primitives.
- */
+const overlayStyle = {
+    position: 'fixed',
+    inset: 0,
+    background: 'rgba(0,0,0,0.5)',
+    zIndex: 9998,
+};
+const contentStyle = {
+    position: 'fixed',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    background: '#fff',
+    padding: 16,
+    borderRadius: 8,
+    boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
+    zIndex: 9999,
+    maxWidth: 560,
+    width: 'calc(100% - 32px)',
+};
 function ModalPop({ trigger, title, children, open, onOpenChange, firstName, lastName, }) {
     const [internalOpen, setInternalOpen] = (0, react_1.useState)(false);
     const [live, setLive] = (0, react_1.useState)('');
@@ -49,11 +66,16 @@ function ModalPop({ trigger, title, children, open, onOpenChange, firstName, las
         return ((0, jsx_runtime_1.jsxs)("div", { children: [trigger, (0, jsx_runtime_1.jsx)("p", { role: "alert", children: "First and last name are required." })] }));
     }
     return ((0, jsx_runtime_1.jsxs)(Dialog.Root, { open: currentOpen, onOpenChange: (o) => {
-            if (!isControlled) {
+            if (!isControlled)
                 setInternalOpen(o);
-            }
             onOpenChange?.(o);
             setLive(o ? 'Dialog opened' : 'Dialog closed');
-        }, children: [trigger && (0, jsx_runtime_1.jsx)(Dialog.Trigger, { asChild: true, children: trigger }), (0, jsx_runtime_1.jsxs)(Dialog.Portal, { children: [(0, jsx_runtime_1.jsx)(Dialog.Overlay, { className: "fixed inset-0 bg-black/50" }), (0, jsx_runtime_1.jsxs)(Dialog.Content, { role: "alertdialog", "aria-modal": "true", "aria-labelledby": "modal-title", className: "fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-4 shadow-lg", children: [title && ((0, jsx_runtime_1.jsx)(Dialog.Title, { id: "modal-title", className: "mb-2 font-bold", children: title })), (0, jsx_runtime_1.jsxs)("div", { children: [firstName, " ", lastName] }), (0, jsx_runtime_1.jsx)("div", { children: children }), (0, jsx_runtime_1.jsx)(Dialog.Close, { asChild: true, children: (0, jsx_runtime_1.jsx)("button", { className: "mt-4", "aria-label": "Close", children: "Close" }) })] })] }), (0, jsx_runtime_1.jsx)("div", { "aria-live": "assertive", className: "sr-only", children: live })] }));
+        }, children: [trigger && (0, jsx_runtime_1.jsx)(Dialog.Trigger, { asChild: true, children: trigger }), (0, jsx_runtime_1.jsxs)(Dialog.Portal, { children: [(0, jsx_runtime_1.jsx)(Dialog.Overlay, { style: overlayStyle }), (0, jsx_runtime_1.jsxs)(Dialog.Content, { role: "alertdialog", "aria-modal": "true", "aria-labelledby": "modal-title", style: contentStyle, children: [title && ((0, jsx_runtime_1.jsx)(Dialog.Title, { id: "modal-title", style: { marginBottom: 8, fontWeight: 700 }, children: title })), (0, jsx_runtime_1.jsxs)("div", { style: { marginBottom: 8 }, children: [firstName, " ", lastName] }), (0, jsx_runtime_1.jsx)("div", { children: children }), (0, jsx_runtime_1.jsx)(Dialog.Close, { asChild: true, children: (0, jsx_runtime_1.jsx)("button", { style: {
+                                        marginTop: 16,
+                                        padding: '8px 12px',
+                                        borderRadius: 6,
+                                        border: '1px solid #ddd',
+                                        background: '#f9f9f9',
+                                    }, "aria-label": "Close", children: "Close" }) })] })] }), (0, jsx_runtime_1.jsx)("div", { "aria-live": "assertive", className: "sr-only", children: live })] }));
 }
 exports.default = ModalPop;
