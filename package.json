@@ -16,6 +16,12 @@
     "build": "tsc && node -e \"require('fs').copyFileSync('dist/index.js','dist/index.esm.js')\"",
     "prepublishOnly": "npm run build"
   },
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "@radix-ui/react-dialog": "^1.1.15"
+  },
+
   "devDependencies": {
     "typescript": "^5.4.0",
     "@types/react": "^19.0.0",
