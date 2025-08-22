@@ -1,4 +1,4 @@
-# modal-popup
+# modal-pop-up-tom
 
 ## Prérequis
 
@@ -16,7 +16,7 @@
 ## Installation
 
 ```bash
-npm install modal-popup
+npm install modal-pop-up-tom
 # installer les peerDependencies
 npm install react@^19.1.1 react-dom@^19.1.1 @radix-ui/react-dialog react-datepicker react-redux react-router-dom redux-persist
 ```
@@ -24,8 +24,8 @@ npm install react@^19.1.1 react-dom@^19.1.1 @radix-ui/react-dialog react-datepic
 ## Utilisation
 
 ```tsx
-import { useState } from 'react'
-import Modal from 'modal-popup'
+import Modal from 'modal-pop-up-tom'
+
 
 // Utilisation non contrôlée (ouverture gérée en interne)
 function UncontrolledExample() {
@@ -66,5 +66,5 @@ function ControlledExample() {
 
 ## Page du paquet
 
-[https://www.npmjs.com/package/modal-popup](https://www.npmjs.com/package/modal-popup)
+[https://www.npmjs.com/package/modal-pop-up-tom](https://www.npmjs.com/package/modal-pop-up-tom)
 
