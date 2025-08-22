@@ -42,11 +42,11 @@ const Dialog = __importStar(require("@radix-ui/react-dialog"));
  */
 function ModalPop({ trigger, title, children, open, onOpenChange, firstName, lastName, }) {
     const [internalOpen, setInternalOpen] = (0, react_1.useState)(false);
+    const [live, setLive] = (0, react_1.useState)('');
     const isControlled = open !== undefined;
     const currentOpen = isControlled ? open : internalOpen;
     if (!firstName || !lastName)
         return null;
-    const [live, setLive] = (0, react_1.useState)('');
     return ((0, jsx_runtime_1.jsxs)(Dialog.Root, { open: currentOpen, onOpenChange: (o) => {
             if (!isControlled) {
                 setInternalOpen(o);

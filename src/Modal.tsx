@@ -35,10 +35,10 @@ function ModalPop({
   lastName,
 }: ModalProps) {
   const [internalOpen, setInternalOpen] = useState(false)
+  const [live, setLive] = useState('')
   const isControlled = open !== undefined
   const currentOpen = isControlled ? open : internalOpen
   if (!firstName || !lastName) return null
-  const [live, setLive] = useState('')
   return (
     <Dialog.Root
       open={currentOpen}
